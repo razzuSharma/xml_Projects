@@ -1,0 +1,122 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Country" type="xs:string" />
+  <xs:element name="City" type="xs:string" />
+  <xs:element name="Street" type="xs:string" />
+  <xs:element name="phoneNum" type="xs:long" />
+  <xs:simpleType name="phoneNumber">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="98[0-9]{8}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Email" type="xs:string" />
+  <xs:simpleType name="emailAddress">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[^@]+@[^\.]+\..+" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Name">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="namID" use="optional" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Address">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="Country" minOccurs="0" />
+        <xs:element ref="City" minOccurs="0" />
+        <xs:element ref="Street" minOccurs="0" />
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="Continent" use="optional" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="phoneNum" />
+        <xs:element ref="Email" />
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="CityCode" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logo" type="xs:string" />
+  <xs:element name="Manufacturer" type="xs:string" />
+  <xs:element name="SideEffects" type="xs:string" />
+  <xs:simpleType name="SideEffects">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="YES" />
+      <xs:enumeration value="NO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Availability" type="xs:string" />
+  <xs:simpleType name="Availability">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="YES" />
+      <xs:enumeration value="NO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AgeRestriction" type="xs:string" />
+  <xs:element name="FoundBy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name" />
+        <xs:element ref="Address" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Categories" type="xs:string" />
+  <xs:element name="useType" type="xs:string" />
+  <xs:element name="MedNames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name" />
+        <xs:element ref="Manufacturer" />
+        <xs:element ref="SideEffects" minOccurs="0" />
+        <xs:element ref="Availability" />
+        <xs:element ref="AgeRestriction" minOccurs="0" />
+        <xs:element ref="FoundBy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Medicine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Categories" />
+        <xs:element ref="useType" />
+        <xs:element ref="MedNames" />
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="medId" use="optional" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Stock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name" />
+        <xs:element ref="Address" />
+        <xs:element ref="Contact" />
+        <xs:element ref="Logo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MedicineDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Medicine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MedicalStore">
+    <xs:annotation>
+      <xs:documentation>&lt;!DOCTYPE MedicalStore SYSTEM "main.dtd">  &lt;MedicalStore xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="19031814_russiandoll.xsd"></xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Stock" />
+        <xs:element ref="MedicineDetails" maxOccurs="unbounded" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

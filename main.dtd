@@ -1,0 +1,25 @@
+<!ELEMENT MedicalStore (Stock,MedicineDetails+)>
+<!ELEMENT Stock (Name,Address,Contact,Logo)>
+<!ELEMENT Name (#PCDATA)>
+<!ATTLIST Name namID NMTOKEN #IMPLIED>
+<!ELEMENT Address (#PCDATA|Country|City|Street)*>
+<!ATTLIST Address Continent NMTOKEN #IMPLIED>
+<!ELEMENT Country (#PCDATA)>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT Street (#PCDATA)>
+<!ELEMENT Contact (phoneNum,Email)>
+<!ATTLIST Contact CityCode NMTOKEN #REQUIRED>
+<!ELEMENT phoneNum (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Logo EMPTY>
+<!ELEMENT MedicineDetails (Medicine)>
+<!ELEMENT Medicine (Categories,useType,MedNames)>
+<!ATTLIST Medicine medId NMTOKEN #REQUIRED>
+<!ELEMENT Categories (#PCDATA)>
+<!ELEMENT useType (#PCDATA)>
+<!ELEMENT MedNames (Name,Manufacturer,SideEffects?,Availability,AgeRestriction?,FoundBy)>
+<!ELEMENT Manufacturer (#PCDATA)>
+<!ELEMENT SideEffects (#PCDATA)>
+<!ELEMENT Availability (#PCDATA)>
+<!ELEMENT AgeRestriction (#PCDATA)>
+<!ELEMENT FoundBy (Name,Address)>

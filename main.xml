@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- <!DOCTYPE MedicalStore SYSTEM "main.dtd"> -->
+<!-- <MedicalStore xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="19031814_russiandoll.xsd"> -->
+<MedicalStore>
+    <Stock>
+        <Name> Bibek Medical Store</Name>
+        <Address Continent="Asia">
+            <Country> Nepal </Country>
+            <City>Damak</City>
+            <Street>Gwaldubba STR</Street>
+        </Address>
+        <Contact CityCode="G024">
+            <phoneNum>9817910047</phoneNum>
+            <Email>razzusharma008@gmail.com</Email>
+        </Contact>
+        <Logo></Logo>
+    </Stock>
+
+    <MedicineDetails>
+        <Medicine medId="md104">
+            <Categories>Liquid</Categories>
+            <useType>Dropper</useType>
+            <MedNames>
+                <Name namID="med2001">Gamma Hydroxybutyrate</Name>
+                <Manufacturer>Phero Oxpharm</Manufacturer>
+                <SideEffects>YES</SideEffects>
+                <Availability>YES</Availability>
+                <AgeRestriction>YES</AgeRestriction>
+                <FoundBy>
+                    <Name>Laborit Laboratory</Name>
+                    <Address>U.S.A</Address>
+                </FoundBy>
+            </MedNames>
+        </Medicine>
+    </MedicineDetails>
+
+    <MedicineDetails>
+        <Medicine medId="md204">
+            <Categories>Tablet</Categories>
+            <useType>Edible</useType>
+            <MedNames>
+                <Name namID="med3001">Paracetamol</Name>
+                <Manufacturer>CFL Pharma</Manufacturer>
+                <SideEffects>YES</SideEffects>
+                <Availability>YES</Availability>
+                <AgeRestriction>NO</AgeRestriction>
+                <FoundBy>
+                    <Name>Von Mering</Name>
+                    <Address>Germany</Address>
+                </FoundBy>
+            </MedNames>
+        </Medicine>
+    </MedicineDetails>
+
+    <MedicineDetails>
+        <Medicine medId="md304">
+            <Categories>Capsules</Categories>
+            <useType>Edible</useType>
+            <MedNames>
+                <Name namID="med4001">Alfacalcidol</Name>
+                <Manufacturer>Roche</Manufacturer>
+                <SideEffects>YES</SideEffects>
+                <Availability>YES</Availability>
+                <FoundBy>
+                    <Name>Reman Laboratory</Name>
+                    <Address>Russia</Address>
+                </FoundBy>
+            </MedNames>
+        </Medicine>
+    </MedicineDetails>
+
+    <MedicineDetails>
+        <Medicine medId="md404">
+            <Categories>Inhalers</Categories>
+            <useType>Inhaling</useType>
+            <MedNames>
+                <Name namID="med5001">Flovent HFA</Name>
+                <Manufacturer>GSK pharma</Manufacturer>
+                <SideEffects>YES</SideEffects>
+                <Availability>YES</Availability>
+                <FoundBy>
+                    <Name>Deram Laboratory</Name>
+                    <Address>Canada</Address>
+                </FoundBy>
+            </MedNames>
+        </Medicine>
+    </MedicineDetails>
+</MedicalStore>
